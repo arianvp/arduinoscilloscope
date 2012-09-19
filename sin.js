@@ -40,9 +40,10 @@ Graph.prototype.drawAxes = function drawAxes() {
 
 }
 
-Graph.prototype.render = function render( fs, colors) {
+Graph.prototype.render = function render( fs, colors, pretty) {
     var colorPos = 0;
     var textPos = 1;
+    var prettyPos = 0;
     var self = this;
     fs.forEach(function(f) {
         self.ctx.beginPath();
@@ -52,7 +53,7 @@ Graph.prototype.render = function render( fs, colors) {
 
             self.ctx.strokeStyle = self.ctx.fillStyle = colors[colorPos];
             if (first) {
-                self.ctx.fillText(f.toString() + " => " + y.toFixed(2), 0, self.XC(textPos)); 
+                self.ctx.fillText(pretty[prettyPos] + " => " + y.toFixed(2), 0, self.XC(textPos)); 
                 self.ctx.moveTo(self.XC(x), self.YC(y));
                 first = false;
             } else {
@@ -64,6 +65,7 @@ Graph.prototype.render = function render( fs, colors) {
         self.ctx.stroke();
         textPos += 1;
         colorPos++;
+        prettyPos++;
     }); 
 }
 
@@ -89,6 +91,11 @@ setInterval(function() {
         "ff0000",
         "00ff00",
         "0000ff"
+    ],
+    [
+        "sin x",
+        "sin (x + 2pi/3)",
+        "sin (x + 4pi/3)"
     ]);
     unamplifiedGraph.drawAxes();
 
@@ -99,6 +106,8 @@ setInterval(function() {
         (function(x) {return F(x-c) > G(x-c) ? 1 : 0;}),
         (function(x) {return F(x-c) > H(x-c) ? 1 : 0;})
     ],
-    ["#ffff00", "#ff00ff"]);
+    ["#ffff00", "#ff00ff"],
+    ["sin x > sin (x + 2pi/3)", "sin x > sin (x + 4pi/3)"]
+    );
     amplifiedGraph.drawAxes();
 }, 40);
