@@ -52,7 +52,7 @@ Graph.prototype.render = function render( fs, colors) {
 
             self.ctx.strokeStyle = self.ctx.fillStyle = colors[colorPos];
             if (first) {
-                self.ctx.fillText(y.toFixed(2), 0, self.XC(textPos)); 
+                self.ctx.fillText(f.toString() + y.toFixed(2), 0, self.XC(textPos)); 
                 self.ctx.moveTo(self.XC(x), self.YC(y));
                 first = false;
             } else {
