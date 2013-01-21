@@ -97,11 +97,11 @@ setInterval(function() {
         (function(x) {return F(x-c) > G(x-c) ? 1 : 0;}),
         (function(x) {return F(x-c) > H(x-c) ? 1 : 0;})
     ], [
-        "670297",
-        "960295",
-        "7C9602",
-        "02961C",
-        "4C4C4C"
+       "rgba(255,0,0,0.4)",
+       "rgba(0,255,0,0.4)",
+        "rgba(255,100,0,0.4)",
+        "ffff00",
+         "ff00ff"
     ],
     [
         "f(x) = sin x",
