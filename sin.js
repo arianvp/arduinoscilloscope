@@ -104,11 +104,11 @@ setInterval(function() {
          "ff00ff"
     ],
     [
-        "f(x) = sin x",
-        "g(x) = f(x + 2pi/3)",
-        "h(x) = g(x + 2pi/3)",
-        "f(x) > g(x)",
-        "f(x) > h(x)"
+        "U_ref(x) = sin x",
+        "U_1(x) = U_ref(x + 2pi/3)",
+        "U_2(x) = U_1(x + 2pi/3)",
+        "U_ref(x) > U_1(x)",
+        "U_ref(x) > U_2(x)"
     ]);
     
     unamplifiedGraph.drawAxes();
